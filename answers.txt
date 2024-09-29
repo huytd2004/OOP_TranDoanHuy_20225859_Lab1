@@ -1,0 +1,26 @@
+1. Điều gì xảy ra nếu người dùng chọn “Hủy”?
+Nếu người dùng chọn "Hủy" trong JOptionPane.showConfirmDialog, biến option sẽ nhận giá trị JOptionPane.CANCEL_OPTION(là hằng số nguyên có giá trị 2). Do đó, nếu người dùng nhấp vào "Cancel", chương trình sẽ hiển thị "No" 
+
+2. Làm thế nào để tùy chỉnh các tùy chọn cho người dùng?
+Để điều chỉnh tùy chọn cho người dùng, sử dụng method JOptionPane.showOptionDialog() với các đối số là (Component parentComponent, Object message, String title, int optionType, int messageType, Icon icon, Object[] options, Object initialValue)
++ Yes, No options :
+Object[] options = {"Yes", "No"};
+int option = JOptionPane.showOptionDialog(null, 
+        "Do you want to change to the first class ticket?", 
+        "Choose an option", 
+        JOptionPane.YES_NO_OPTION, 
+        JOptionPane.QUESTION_MESSAGE, 
+        null, options, options[0]);
+
+JOptionPane.showMessageDialog(null, "You've chosen: " + (option == 0 ? "Yes" : "No"));
++ “I do” and “I don’t” options :
+Object[] options = {"I do", "I don't"};
+int option = JOptionPane.showOptionDialog(null, 
+        "Do you want to change to the first class ticket?", 
+        "Choose an option", 
+        JOptionPane.YES_NO_OPTION, 
+        JOptionPane.QUESTION_MESSAGE, 
+        null, options, options[0]);
+
+JOptionPane.showMessageDialog(null, "You've chosen: " + (option == 0 ? "I do" : "I don't"));
+
